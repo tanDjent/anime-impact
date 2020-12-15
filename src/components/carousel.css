@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container:hover .Back,
+.container:hover .Next {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide {
+  flex: 1;
+}
+
+.button {
+  width: 40px;
+  position: absolute;
+  top: calc(2rem + 0.8rem - 2px);
+  padding: 1rem 0.4rem;
+  font-size: 2rem;
+  border: none;
+  outline: none !important;
+  color: #fff;
+  height: calc(100% - 2rem - 0.8rem + 2px);
+  background: transparent;
+  border-radius: 0.6rem;
+}
+.Back {
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.Next {
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8)
+  );
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}

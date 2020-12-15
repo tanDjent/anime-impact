@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +6,32 @@
 }
 
 body {
-  font-family: "Chilanka", cursive;
+  font-family: "Montserrat", sans-serif;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", serif;
+}
 .brand-title {
+  font-size: 2rem;
   display: flex;
   align-items: center;
+  flex: 0 0 19%;
+}
+.navbar {
+  height: 90px;
+  justify-content: center;
+  padding: 0 3rem;
 }
 
 .img-container {
   display: inline-block;
-  width: 2rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 100%;
 }
 
 .img-container img {
@@ -26,16 +41,74 @@ body {
 }
 
 .my-class {
-  margin-left: 2rem !important;
+  margin-left: 3rem !important;
+  font-size: 2rem;
 }
 
 .full {
   width: 100%;
-  height: 100vh;
   display: grid;
+  grid-gap: 20px;
+  gap: 20px;
+  padding: 2rem 3rem;
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: 360px 360px 1fr;
+}
+.menu {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 2rem;
+}
+.menu button {
+  font-size: 1.2rem;
+  color: white;
+  font-family: inherit;
+  background: transparent !important;
+}
+.search-bar {
+  flex: 1;
+}
+.search-bar input {
+  width: 100%;
+  padding: 0.4rem 1.4rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  border: none !important;
+  outline: none !important;
+}
+.slider {
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+}
+.slider .prev,
+.slider .next {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+}
+.slider .next {
+  left: auto;
+  right: 0;
+}
+.full .main {
+  height: 100%;
+  /* background: red; */
 }
 
-.menu button {
-  color: white;
+.full .right {
+  grid-row: span 2;
+}
+.carousel,
+.carousel .container,
+.carousel .container > div,
+.carousel .container > div > div,
+.carousel ul,
+.carousel li {
+  height: 100%;
 }
