@@ -7,6 +7,12 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  /* background: url("./assets/bg1.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
+
+  background-color: #161719;
+  color: white;
 }
 h1,
 h2,
@@ -44,16 +50,6 @@ h6 {
   margin-left: 3rem !important;
   font-size: 2rem;
 }
-
-.full {
-  width: 100%;
-  display: grid;
-  grid-gap: 20px;
-  gap: 20px;
-  padding: 2rem 3rem;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 360px 360px 1fr;
-}
 .menu {
   flex: 0 0 25%;
   display: flex;
@@ -77,6 +73,14 @@ h6 {
   border: none !important;
   outline: none !important;
 }
+.full {
+  width: 100%;
+  padding: 4rem;
+  margin: 0 auto;
+  max-width: 1680px;
+  height: fit-content;
+  display: flex;
+}
 .slider {
   overflow-x: hidden;
   position: relative;
@@ -98,11 +102,13 @@ h6 {
 }
 .full .main {
   height: 100%;
-  /* background: red; */
 }
-
+.full .left {
+  flex: 1;
+}
 .full .right {
-  grid-row: span 2;
+  flex: 0 0 25%;
+  margin-left: 3rem;
 }
 .carousel,
 .carousel .container,

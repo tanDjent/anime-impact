@@ -9,15 +9,20 @@ function Header(props) {
   const THEME = createMuiTheme({
     palette: {
       primary: {
-        light: "#657dd5",
-        main: "#2e51a3",
-        dark: "#002a74",
+        light: "#5679cb",
+        main: "#157dc5",
+        dark: "#272727",
       },
     },
   });
   return (
     <MuiThemeProvider theme={THEME}>
-      <AppBar position='sticky' top={0} classes={{ root: "navbar" }}>
+      <AppBar
+        position='sticky'
+        top={0}
+        classes={{ root: "navbar" }}
+        // style={{ background: "transparent" }}
+      >
         <Toolbar>
           <div className='brand-title'>
             <span className='img-container'>

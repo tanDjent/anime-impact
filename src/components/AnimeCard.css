@@ -4,29 +4,75 @@
   overflow: hidden;
   border-radius: 0.6rem !important;
   margin: 0 0.2rem;
-}
-
-.card-image:hover {
-  transform: scale(1.2);
+  cursor: pointer;
 }
 .card-image {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
   height: 100%;
   background-size: contain;
   background-position: center;
   transition: transform 0.15s ease-in-out;
+  overflow: hidden;
 }
+.card:hover .card-image {
+  transform: scale(1.1);
+}
+.card-image::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5); */
 
+  margin: -20px;
+}
+.card:hover .card-image::before {
+  filter: blur(0px);
+}
 .card-title {
   padding: 16px 2rem;
-  text-align: center;
   position: absolute;
-  bottom: 0;
   color: #fff;
   font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background: radial-gradient(center, #00000000 0%, #000000 80%); */
+  background: radial-gradient(circle at 5% 5%, #00000000 0%, #000000 90%);
   width: 100%;
-  height: 80px;
+  height: 100%;
+  top: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  /* pointer-events: none; */
+  z-index: 2;
+}
+
+.card-title .anime-title {
+  flex: 0 0 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-height: 80px;
+  width: 100%;
+}
+.episode,
+.score {
+  position: absolute;
+  top: 0.5rem;
+  background: black;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 1em;
+}
+
+.score {
+  right: 0.5rem;
+}
+.episode {
+  left: 0.5rem;
 }

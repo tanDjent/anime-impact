@@ -1,20 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CustomCarousel from "./CustomCarousel";
-
-function Home({ seasonalAnime }) {
-  const [slides, setslides] = useState([]);
-  useEffect(() => {
-    if (seasonalAnime && seasonalAnime.length) {
-      setslides(seasonalAnime.slice(0, 25));
-    }
-  }, [seasonalAnime]);
-
+import TopList from "./TopList";
+import AllTimeList from "./AllTimeList";
+function Home({
+  seasonalAnime,
+  airingToday,
+  topAiring,
+  topUpcoming,
+  allTimeTop,
+  quote,
+}) {
+  console.log(quote);
   return (
     <div className='full'>
       <div className='main left'>
-        <CustomCarousel title='Seasonal Anime' slides={slides} />
+        <CustomCarousel title='Airing Today' slides={airingToday} />
+        <CustomCarousel
+          style={{ marginTop: "2rem" }}
+          title='Seasonal Anime'
+          slides={seasonalAnime}
+        />
+        <AllTimeList list={allTimeTop} />
       </div>
-      <div className='main right'></div>
+
+      <div className='main right'>
+        <TopList slides={topAiring} title='Top Airing' />
+        <br />
+        <br />
+        <TopList slides={topUpcoming} title='Top Upcoming' />
+      </div>
     </div>
   );
 }

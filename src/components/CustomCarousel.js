@@ -11,13 +11,15 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import "./carousel.css";
 import AnimeCard from "./AnimeCard";
 
-const CustomCarousel = ({ slides, title }) => (
+const CustomCarousel = ({ slides, title, style = {} }) => (
   <CarouselProvider
+    style={style}
     visibleSlides={5}
     totalSlides={slides.length}
     step={5}
     naturalSlideWidth={400}
     naturalSlideHeight={500}
+    infinite
   >
     <div className='container'>
       <h2 style={{ marginBottom: "0.8rem" }}>{title}</h2>

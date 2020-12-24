@@ -1,1 +1,15 @@
 export const SeasonalAnime = "https://api.jikan.moe/v3/season";
+export const AiringToday = "https://api.jikan.moe/v3/schedule/";
+export const TopAiring = "https://api.jikan.moe/v3/top/anime/1/airing";
+export const TopUpcoming = "https://api.jikan.moe/v3/top/anime/1/upcoming";
+export const AllTimeTop = "https://api.jikan.moe/v3/top/anime/1";
+export const Quote = "https://animechanapi.xyz/api/quotes/random";
+export const Anime = "https://api.jikan.moe/v3/anime/";
+export const weekday = new Array(7);
+weekday[0] = "sunday";
+weekday[1] = "monday";
+weekday[2] = "tuesday";
+weekday[3] = "wednesday";
+weekday[4] = "thursday";
+weekday[5] = "friday";
+weekday[6] = "saturday";
