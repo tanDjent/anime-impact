@@ -5,6 +5,7 @@ export const TopUpcoming = "https://api.jikan.moe/v3/top/anime/1/upcoming";
 export const AllTimeTop = "https://api.jikan.moe/v3/top/anime/1";
 export const Quote = "https://animechanapi.xyz/api/quotes/random";
 export const Anime = "https://api.jikan.moe/v3/anime/";
+export const Manga = "https://api.jikan.moe/v3/manga/";
 export const weekday = new Array(7);
 weekday[0] = "sunday";
 weekday[1] = "monday";

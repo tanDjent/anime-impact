@@ -1,11 +1,3 @@
-.container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.6rem;
-  display: flex;
-  flex-direction: column;
-}
-
 .container:hover .Back,
 .container:hover .Next {
   opacity: 1;
@@ -13,17 +5,20 @@
 .slide {
   flex: 1;
 }
-
+.container {
+  position: relative;
+  padding: 0 !important;
+}
 .button {
   width: 40px;
   position: absolute;
-  top: calc(2rem + 0.8rem - 2px);
+  top: 51px;
   padding: 1rem 0.4rem;
   font-size: 2rem;
   border: none;
   outline: none !important;
   color: #fff;
-  height: calc(100% - 2rem - 0.8rem + 2px);
+  height: calc(100% - 51px);
   background: transparent;
   border-radius: 0.6rem;
 }

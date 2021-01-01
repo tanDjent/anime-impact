@@ -6,13 +6,11 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
+  background: black !important;
   /* background: url("./assets/bg1.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed; */
-
-  background-color: #161719;
-  color: white;
 }
 h1,
 h2,
@@ -20,101 +18,89 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather", serif !important;
 }
-.brand-title {
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  flex: 0 0 19%;
-}
+
 .navbar {
-  height: 90px;
+  color: #5d4298;
+  display: flex;
+  height: 100px;
+  background-color: #1c1c1c;
   justify-content: center;
   padding: 0 3rem;
 }
-
-.img-container {
-  display: inline-block;
-  width: 2.5rem;
-  height: 100%;
+.navbar-nav {
+  width: 100%;
+  margin: 0 2rem;
 }
 
-.img-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.nav-link {
+  color: black;
 }
 
-.my-class {
-  margin-left: 3rem !important;
-  font-size: 2rem;
-}
-.menu {
-  flex: 0 0 25%;
-  display: flex;
-  justify-content: space-evenly;
-  padding-right: 2rem;
-}
-.menu button {
-  font-size: 1.2rem;
-  color: white;
-  font-family: inherit;
-  background: transparent !important;
-}
 .search-bar {
-  flex: 1;
+  width: auto;
+  border-radius: 10rem;
+  align-content: center;
+  margin-top: 1rem;
 }
-.search-bar input {
+.search-bar input,
+.search-bar input:active,
+.search-bar input:focus {
   width: 100%;
   padding: 0.4rem 1.4rem;
   font-size: 1.4rem;
   border-radius: 1rem;
   border: none !important;
   outline: none !important;
+  background: linear-gradient(#000, #000) center bottom 5px / calc(100% - 10px)
+    2px no-repeat !important;
 }
-.full {
-  width: 100%;
-  padding: 4rem;
-  margin: 0 auto;
-  max-width: 1680px;
-  height: fit-content;
-  display: flex;
+
+.search-button {
+  background: #1c1c1c !important;
+  border: none !important;
+  font-size: 1.8rem !important;
 }
-.slider {
-  overflow-x: hidden;
-  position: relative;
-  height: 100%;
+.search-button:hover {
+  transition: 0.5s ease all;
+  transform: rotateZ(120deg);
 }
-.slider .prev,
-.slider .next {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 5rem;
-  width: 5rem;
-  text-align: center;
+
+.middleComponent {
+  margin-top: 150px;
 }
-.slider .next {
-  left: auto;
-  right: 0;
+
+.quote {
+  padding: 1rem;
+  margin: 5rem 1rem;
+  box-shadow: 0 2px 3px rgba(255, 255, 255, 0.3), 0 -1px 2px rgba(0, 0, 0, 0.2);
+  color: white;
 }
-.full .main {
-  height: 100%;
+.anime {
+  color: white;
+  margin-top: 10rem;
 }
-.full .left {
-  flex: 1;
+.dropdown-button {
+  padding: 1rem;
+  margin-left: 1rem !important;
 }
-.full .right {
-  flex: 0 0 25%;
-  margin-left: 3rem;
+.dropdown-button .btn-primary {
+  background-color: transparent;
+  border-color: transparent;
 }
-.carousel,
-.carousel .container,
-.carousel .container > div,
-.carousel .container > div > div,
-.carousel ul,
-.carousel li {
-  height: 100%;
+.dropdown-button .btn-primary:hover,
+.dropdown-button .btn-primary:focus,
+.dropdown-button .btn-primary:active {
+  background-color: #5d4298 !important;
+  border-color: transparent !important;
+}
+.home-button {
+  margin-top: 1rem;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.home-button .btn-secondary.focus {
+  background-color: #5d4298;
+  border-color: transparent !important;
 }

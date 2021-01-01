@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Footer from "./components/FooterComponent";
 import Header from "./components/HeaderComponent";
 import Home from "./components/HomeComponent";
+import AnimeManga from "./components/AnimeManga";
 import axios from "axios";
+import { Switch, Route, Redirect } from "react-router-dom";
 import {
   SeasonalAnime,
   weekday,
@@ -11,9 +13,8 @@ import {
   TopUpcoming,
   AllTimeTop,
   Quote,
-  Anime,
 } from "./shared";
-// Routes : /
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,24 +26,19 @@ class App extends Component {
       topAiring: [],
       topUpcoming: [],
       allTimeTop: [],
-      quote: [],
+      quote: null,
       error: null,
-      animeId: null,
       anime: {},
     };
   }
-  animeIdHandler(id) {
-    this.setState({
-      animeId: id,
-    });
-  }
+  animeIdHandler() {}
 
-  fetchList(key, api, payloadKey = "anime") {
+  fetchList(key, api, payloadKey = "anime", completeData = false) {
     return axios
       .get(api)
       .then((result) => {
         this.setState({
-          [key]: result.data[payloadKey],
+          [key]: completeData ? result.data : result.data[payloadKey],
         });
       })
       .catch((error) =>
@@ -71,35 +67,29 @@ class App extends Component {
     );
   }
 
-  componentDidUpdate() {
-    if (this.state.animeId) {
-      axios
-        .get(Anime + this.state.animeId)
-        .then((result) => {
-          this.setState({
-            anime: result.data,
-          });
-        })
-        .catch((error) =>
-          this.setState({
-            error,
-          })
-        );
-    }
-  }
+  componentDidUpdate() {}
   render() {
     return (
       <>
         <Header />
-        <Home
-          airingToday={this.state.airingToday}
-          seasonalAnime={this.state.seasonalAnime.slice(0, 25)}
-          topAiring={this.state.topAiring.slice(0, 5)}
-          topUpcoming={this.state.topUpcoming.slice(0, 5)}
-          allTimeTop={this.state.allTimeTop.slice(0, 5)}
-          quote={this.state.quote}
-          animeIdHandler={this.animeIdHandler}
-        />
+        <Switch>
+          <Route
+            path='/home'
+            component={() => (
+              <Home
+                airingToday={this.state.airingToday}
+                seasonalAnime={this.state.seasonalAnime.slice(0, 25)}
+                topAiring={this.state.topAiring.slice(0, 5)}
+                topUpcoming={this.state.topUpcoming.slice(0, 5)}
+                allTimeTop={this.state.allTimeTop.slice(0, 5)}
+                quote={this.state.quote}
+              />
+            )}
+          />
+          <Route path='/anime/:id' component={() => <AnimeManga />} />
+          <Route path='/manga/:id' component={() => <AnimeManga />} />
+          <Redirect to='/home' />
+        </Switch>
         <Footer />
       </>
     );
