@@ -5,7 +5,19 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  height: 100%;
+}
+#root {
+  min-height: 100%;
+  height: fit-content;
+  position: relative;
+  padding-bottom: calc(100px + 2rem);
+}
+
 body {
+  padding-top: 10rem;
   font-family: "Montserrat", sans-serif !important;
   background: black !important;
   /* background: url("./assets/bg1.jpg") no-repeat;
@@ -20,14 +32,21 @@ h5,
 h6 {
   font-family: "Merriweather", serif !important;
 }
-
-.navbar {
+.website-title {
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: blueviolet;
+}
+.navbar,
+.footer {
   color: #5d4298;
   display: flex;
   height: 100px;
   background-color: #1c1c1c;
   justify-content: center;
   padding: 0 3rem;
+}
+.bottom-0 {
+  bottom: 0 !important;
 }
 .navbar-nav {
   width: 100%;
@@ -48,11 +67,12 @@ h6 {
 .search-bar input:active,
 .search-bar input:focus {
   width: 100%;
-  padding: 0.4rem 1.4rem;
+  margin-left: 1rem;
   font-size: 1.4rem;
   border-radius: 1rem;
   border: none !important;
   outline: none !important;
+  box-shadow: none !important;
   background: linear-gradient(#000, #000) center bottom 5px / calc(100% - 10px)
     2px no-repeat !important;
 }
@@ -79,8 +99,12 @@ h6 {
 }
 .anime {
   color: white;
-  margin-top: 10rem;
 }
+
+.anime-score {
+  margin-top: 3rem;
+}
+
 .dropdown-button {
   padding: 1rem;
   margin-left: 1rem !important;
@@ -93,14 +117,158 @@ h6 {
 .dropdown-button .btn-primary:focus,
 .dropdown-button .btn-primary:active {
   background-color: #5d4298 !important;
-  border-color: transparent !important;
+  border-color: #5d4298 !important;
 }
 .home-button {
   margin-top: 1rem;
   background-color: transparent !important;
   border-color: transparent !important;
 }
-.home-button .btn-secondary.focus {
-  background-color: #5d4298;
+.home-button .btn-secondary:focus,
+.btn-secondary:hover {
+  background-color: #5d4298 !important;
+  border-color: #5d4298 !important;
+}
+
+.btn-primary,
+.btn-secondary {
+  font-size: 1.5rem !important;
+  background-color: transparent !important;
   border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.radioButton {
+  margin-top: 1rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+.radioButton .btn .active .btn-secondary {
+  background-color: #5d4298 !important;
+}
+
+.footer {
+  margin-top: 2rem !important;
+  color: white;
+  height: fit-content;
+}
+
+.loader {
+  height: calc(100vh - 10rem);
+}
+/* search button */
+#s-cover {
+  width: 1px;
+  transform: scale(0.4);
+}
+#s-cover button {
+  margin-top: -1rem;
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 75px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+#s-circle {
+  position: relative;
+  top: -20px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+#s-cover button span {
+  position: absolute;
+  top: 45px;
+  left: 38px;
+  display: block;
+  width: 25px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
+}
+
+#s-cover button span:before,
+#s-cover button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle {
+  top: -1px;
+  width: 67px;
+  height: 15px;
+  border-width: 0;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+#s-cover:hover span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .bg-dark {
+    background: #1c1c1c;
+  }
+  body {
+    font-size: 10px !important;
+  }
+  .search-bar-input {
+    width: calc(100% - 80px) !important;
+  }
+  .navbar-nav {
+    margin: 0;
+    max-width: 100vw;
+  }
+  .nav-wrap {
+    justify-content: center !important;
+  }
+  .website-title {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  .nav-item *,
+  .TopListItem h4,
+  .TopListItem h3 {
+    font-size: 1.2rem !important;
+  }
 }

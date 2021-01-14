@@ -18,7 +18,8 @@ class Header extends Component {
     super(props);
     this.state = {
       isNavOpen: false,
-      searchBUtton: "search",
+      searchButton: "search",
+      name: "",
     };
     this.toggleNav = () => {
       this.setState({
@@ -30,15 +31,15 @@ class Header extends Component {
   render() {
     return (
       <Navbar dark expand='md' fixed='top' className='navbar'>
-        <div className='container-fluid'>
+        <div className='container-fluid nav-wrap'>
           <NavbarToggler onClick={this.toggleNav} />
-          <NavbarBrand href='/' className='ml-auto'>
+          <NavbarBrand href='/' className='m-0 mx-3'>
             <img src={Fischl} height='80' width='40' alt='logo' />
           </NavbarBrand>
-          <h2>Anime Impact</h2>
-          <Collapse isOpen={this.state.isNavOpen} navbar>
+          <h1 className='website-title'>Anime Impact</h1>
+          <Collapse className='bg-dark' isOpen={this.state.isNavOpen} navbar>
             <Nav navbar>
-              <div className='menu d-flex w-50'>
+              <div className='menu d-flex '>
                 <NavItem>
                   <NavLink to='/home'>
                     <Button className='home-button'>Home</Button>
@@ -51,6 +52,8 @@ class Header extends Component {
                     <Dropdown.Menu>
                       <Dropdown.Item href='#'>Top Anime</Dropdown.Item>
                       <Dropdown.Item href='#'>Seasonal Anime</Dropdown.Item>
+                      <Dropdown.Item href='#'>Top Airing</Dropdown.Item>
+                      <Dropdown.Item href='#'>Top Upcoming</Dropdown.Item>
                       <Dropdown.Item href='#'>Surprise Me!</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -67,30 +70,21 @@ class Header extends Component {
                   </Dropdown>
                 </NavItem>
               </div>
+
               <NavItem>
                 <div className='search-bar d-flex '>
-                  <Input type='text' placeholder='Search' />
-                  <Button
-                    className='search-button'
-                    onMouseOver={() => {
-                      this.setState({
-                        searchBUtton: "arrow",
-                      });
-                    }}
-                    onMouseLeave={() => {
-                      this.setState({
-                        searchBUtton: "search",
-                      });
-                    }}
-                  >
-                    <span
-                      className={
-                        this.state.searchBUtton === "search"
-                          ? "fas fa-search"
-                          : "fas fa-arrow-right"
-                      }
-                    ></span>
-                  </Button>
+                  <Input
+                    className='search-bar-input'
+                    id='name'
+                    type='text'
+                    placeholder='Search'
+                  />
+                  <div className='td' id='s-cover'>
+                    <button type='submit'>
+                      <div id='s-circle'></div>
+                      <span></span>
+                    </button>
+                  </div>
                 </div>
               </NavItem>
             </Nav>

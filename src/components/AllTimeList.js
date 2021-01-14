@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function AllTimeList({ list }) {
   return (
     <>
@@ -8,23 +8,41 @@ export default function AllTimeList({ list }) {
         <ul>
           {list.map(
             (
-              { image_url, title, episodes, rank, score, start_date, end_date },
+              {
+                mal_id,
+                image_url,
+                title,
+                episodes,
+                rank,
+                score,
+                start_date,
+                end_date,
+              },
               index
             ) => (
-              <li className='TopListItem' key={index} index={index}>
-                <span className='rank'>
-                  <b>{rank}</b>
-                </span>
-                <img src={image_url} alt={title} />
-                <div>
-                  <h3>{title}</h3>
-                  <p>Episode: {episodes || "???"}</p>
-                  <p>Score: {score}</p>
-                  <p>
-                    Aired: {start_date} - {end_date}{" "}
-                  </p>
-                </div>
-              </li>
+              <Link
+                to={`/anime/${mal_id}`}
+                style={{ textDecoration: "none" }}
+                key={index}
+              >
+                <li className='TopListItem' key={index} index={index}>
+                  <span className='rank'>
+                    <b>{rank}</b>
+                  </span>
+                  <img src={image_url} alt={title} />
+                  <div>
+                    <h3>
+                      {title.slice(0, 10) + title.length > 10 ? "..." : ""}
+                    </h3>
+                    <p>
+                      Episode: {episodes || "???"} | Score: {score}
+                    </p>
+                    <p>
+                      Aired: {start_date} - {end_date}{" "}
+                    </p>
+                  </div>
+                </li>
+              </Link>
             )
           )}
         </ul>

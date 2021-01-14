@@ -11,9 +11,13 @@ export default function TopList({ slides, title, airingStatus }) {
             { image_url, title, episodes, rank, score, mal_id, start_date },
             index
           ) => (
-            <Link to={`/anime/${mal_id}`} style={{ textDecoration: "none" }}>
+            <Link
+              to={`/anime/${mal_id}`}
+              style={{ textDecoration: "none" }}
+              key={index}
+            >
               {" "}
-              <li className='TopListItem' key={index} index={index}>
+              <li className='TopListItem' index={index}>
                 <span className='rank'>
                   <b>{rank}</b>
                 </span>

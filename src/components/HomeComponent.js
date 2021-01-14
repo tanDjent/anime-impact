@@ -11,7 +11,7 @@ function Home({
   quote,
 }) {
   return (
-    <div className='container-fluid middleComponent'>
+    <div className='container-fluid '>
       <div className='row'>
         <div className='col-12 col-sm-8'>
           <CustomCarousel title='Airing Today' slides={airingToday} />
@@ -20,12 +20,18 @@ function Home({
             title='Seasonal Anime'
             slides={seasonalAnime}
           />
-          {quote != null && (
+          {quote ? (
             <div className='quote'>
               <h4>{quote[0].quote}</h4>
               <p>
                 -{quote[0].character} from {quote[0].anime}
               </p>
+            </div>
+          ) : (
+            <div className='d-flex justify-content-center align-items-center '>
+              <div className='spinner-grow' role='status'>
+                <span className='sr-only'>Loading...</span>
+              </div>
             </div>
           )}
 

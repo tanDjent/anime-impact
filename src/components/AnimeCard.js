@@ -15,20 +15,26 @@ const AnimeCard = ({
 }) => {
   return (
     <Link to={`/anime/${mal_id}`}>
-      <Card className='card'>
-        <CardMedia className='card-image' image={image_url} />
-        <CardContent className='card-title'>
-          <h4 className='anime-title' title={title}>
-            {title}
-          </h4>
-          <span className='episode d-none d-md-block'>
-            <i className='fas fa-film'></i> {episodes || " ??"}
-          </span>
-          <span className='score d-none d-md-block'>
-            <i className='fas fa-heart'></i> {score || " ??"}
-          </span>
-        </CardContent>
-      </Card>
+      {title === "Loading" ? (
+        <div className='spinner-grow' role='status'>
+          <span className='sr-only'>Loading...</span>
+        </div>
+      ) : (
+        <Card className='card '>
+          <CardMedia className='card-image' image={image_url} />
+          <CardContent className='card-title'>
+            <h4 className='anime-title' title={title}>
+              {title}
+            </h4>
+            <span className='episode d-none d-md-block'>
+              <i className='fas fa-film'></i> {episodes || " ??"}
+            </span>
+            <span className='score d-none d-md-block'>
+              <i className='fas fa-heart'></i> {score || " ??"}
+            </span>
+          </CardContent>
+        </Card>
+      )}
     </Link>
   );
 };

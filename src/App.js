@@ -18,7 +18,6 @@ import {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.animeIdHandler = this.animeIdHandler.bind(this);
     this.state = {
       day: weekday[new Date().getDay()],
       seasonalAnime: [],
@@ -31,7 +30,6 @@ class App extends Component {
       anime: {},
     };
   }
-  animeIdHandler() {}
 
   fetchList(key, api, payloadKey = "anime", completeData = false) {
     return axios
@@ -59,7 +57,7 @@ class App extends Component {
         { api: SeasonalAnime, key: "seasonalAnime" },
         { api: TopAiring, key: "topAiring", payloadKey: "top" },
         { api: TopUpcoming, key: "topUpcoming", payloadKey: "top" },
-        { api: AllTimeTop, key: "allTimeTop", payloadKey: "top" },
+        { api: AllTimeTop + "1", key: "allTimeTop", payloadKey: "top" },
         { api: Quote, key: "quote", payloadKey: "data" },
       ].map(({ api, key, payloadKey = "anime" }) =>
         this.fetchList(key, api, payloadKey)
@@ -86,6 +84,7 @@ class App extends Component {
               />
             )}
           />
+
           <Route path='/anime/:id' component={() => <AnimeManga />} />
           <Route path='/manga/:id' component={() => <AnimeManga />} />
           <Redirect to='/home' />
