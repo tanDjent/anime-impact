@@ -31,9 +31,7 @@ export default function AllTimeList({ list }) {
                   </span>
                   <img src={image_url} alt={title} />
                   <div>
-                    <h3>
-                      {title.slice(0, 10) + title.length > 10 ? "..." : ""}
-                    </h3>
+                    <h3 className='text-truncate d-block'>{title}</h3>
                     <p>
                       Episode: {episodes || "???"} | Score: {score}
                     </p>

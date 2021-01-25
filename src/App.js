@@ -4,6 +4,7 @@ import Header from "./components/HeaderComponent";
 import Home from "./components/HomeComponent";
 import AnimeManga from "./components/AnimeManga";
 import axios from "axios";
+import List from "./components/List";
 import { Switch, Route, Redirect } from "react-router-dom";
 import {
   SeasonalAnime,
@@ -14,7 +15,6 @@ import {
   AllTimeTop,
   Quote,
 } from "./shared";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -84,7 +84,7 @@ class App extends Component {
               />
             )}
           />
-
+          <Route path='/anime-manga/:type' component={List}></Route>
           <Route path='/anime/:id' component={() => <AnimeManga />} />
           <Route path='/manga/:id' component={() => <AnimeManga />} />
           <Redirect to='/home' />

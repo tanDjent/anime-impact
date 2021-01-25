@@ -244,9 +244,14 @@ h6 {
   width: 40px;
   background-color: #fff;
 }
+.hamBurger {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+}
 
 @media screen and (max-width: 768px) {
-  .bg-dark {
+  .bg-nav-dark {
     background: #1c1c1c;
   }
   body {
@@ -271,4 +276,20 @@ h6 {
   .TopListItem h3 {
     font-size: 1.2rem !important;
   }
+}
+.nav-tabs {
+  background: #1c1c1c;
+}
+.nav-tabs .nav-link.active {
+  background-color: #5d4298 !important;
+  color: white !important;
+}
+.nav-link {
+  color: white;
+}
+a:hover {
+  color: #5d4298 !important;
+}
+.breadcrumb {
+  background-color: white !important;
 }

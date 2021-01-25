@@ -38,11 +38,11 @@ function Home({
           <AllTimeList list={allTimeTop} />
         </div>
         <div className='col-12 col-sm-4'>
-          <TopList slides={topAiring} title='Top Airing' airingStatus='true' />
+          <TopList slides={topAiring} title='Top Airing' airingStatus={true} />
           <TopList
             slides={topUpcoming}
             title='Top Upcoming'
-            airingStatus='false'
+            airingStatus={false}
           />
         </div>
       </div>

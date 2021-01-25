@@ -11,7 +11,7 @@ import {
   Input,
 } from "reactstrap";
 import Fischl from "../assets/fischl.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
@@ -31,13 +31,17 @@ class Header extends Component {
   render() {
     return (
       <Navbar dark expand='md' fixed='top' className='navbar'>
-        <div className='container-fluid nav-wrap'>
-          <NavbarToggler onClick={this.toggleNav} />
+        <div className='container-fluid nav-wrap position-relative'>
+          <NavbarToggler className='hamBurger' onClick={this.toggleNav} />
           <NavbarBrand href='/' className='m-0 mx-3'>
             <img src={Fischl} height='80' width='40' alt='logo' />
           </NavbarBrand>
           <h1 className='website-title'>Anime Impact</h1>
-          <Collapse className='bg-dark' isOpen={this.state.isNavOpen} navbar>
+          <Collapse
+            className='bg-nav-dark'
+            isOpen={this.state.isNavOpen}
+            navbar
+          >
             <Nav navbar>
               <div className='menu d-flex '>
                 <NavItem>
@@ -50,11 +54,41 @@ class Header extends Component {
                   <Dropdown className='dropdown-button'>
                     <Dropdown.Toggle>Anime</Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href='#'>Top Anime</Dropdown.Item>
-                      <Dropdown.Item href='#'>Seasonal Anime</Dropdown.Item>
-                      <Dropdown.Item href='#'>Top Airing</Dropdown.Item>
-                      <Dropdown.Item href='#'>Top Upcoming</Dropdown.Item>
-                      <Dropdown.Item href='#'>Surprise Me!</Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopAnime")
+                        }
+                      >
+                        Top Anime
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/SeasonalAnime")
+                        }
+                      >
+                        Seasonal Anime
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopMovie")
+                        }
+                      >
+                        Top Movie
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopAiring")
+                        }
+                      >
+                        Top Airing
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopUpcoming")
+                        }
+                      >
+                        Top Upcoming
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </NavItem>
@@ -64,8 +98,34 @@ class Header extends Component {
                     <Dropdown.Toggle>Manga</Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href='#'>Top Manga</Dropdown.Item>
-                      <Dropdown.Item href='#'>Surprise Me!</Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopManga")
+                        }
+                      >
+                        Top Manga
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopOneShots")
+                        }
+                      >
+                        Top Oneshots
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopLightNovel")
+                        }
+                      >
+                        Top Light Novel
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() =>
+                          this.props.history.push("/anime-manga/TopDoujinshi")
+                        }
+                      >
+                        Top Doujinshi
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </NavItem>
@@ -94,4 +154,4 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+export default withRouter(Header);
