@@ -7,6 +7,8 @@ export const TopManga = "https://api.jikan.moe/v3/top/manga/";
 export const Quote = "https://animechanapi.xyz/api/quotes/random";
 export const Anime = "https://api.jikan.moe/v3/anime/";
 export const Manga = "https://api.jikan.moe/v3/manga/";
+export const SearchManga = "https://api.jikan.moe/v3/search/manga?q=";
+export const SearchAnime = "https://api.jikan.moe/v3/search/anime?q=";
 export const weekday = new Array(7);
 weekday[0] = "sunday";
 weekday[1] = "monday";

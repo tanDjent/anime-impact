@@ -3,6 +3,7 @@ import Footer from "./components/FooterComponent";
 import Header from "./components/HeaderComponent";
 import Home from "./components/HomeComponent";
 import AnimeManga from "./components/AnimeManga";
+import SearchComponent from "./components/SearchComponent";
 import axios from "axios";
 import List from "./components/List";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -87,6 +88,7 @@ class App extends Component {
           <Route path='/anime-manga/:type' component={List}></Route>
           <Route path='/anime/:id' component={() => <AnimeManga />} />
           <Route path='/manga/:id' component={() => <AnimeManga />} />
+          <Route path='/search/:name' component={() => <SearchComponent />} />
           <Redirect to='/home' />
         </Switch>
         <Footer />

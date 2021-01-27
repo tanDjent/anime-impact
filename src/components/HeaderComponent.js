@@ -18,8 +18,7 @@ class Header extends Component {
     super(props);
     this.state = {
       isNavOpen: false,
-      searchButton: "search",
-      name: "",
+      search: "",
     };
     this.toggleNav = () => {
       this.setState({
@@ -138,9 +137,17 @@ class Header extends Component {
                     id='name'
                     type='text'
                     placeholder='Search'
+                    onChange={(event) =>
+                      this.setState({ search: event.target.value })
+                    }
                   />
                   <div className='td' id='s-cover'>
-                    <button type='submit'>
+                    <button
+                      type='submit'
+                      onClick={() =>
+                        this.props.history.push(`/search/${this.state.search}`)
+                      }
+                    >
                       <div id='s-circle'></div>
                       <span></span>
                     </button>

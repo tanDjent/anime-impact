@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import TopList from "./TopList";
 import { AllTimeTop, SeasonalAnime, TopManga } from "../shared";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 import { Button } from "reactstrap";
 
 export default function Page({ listType }) {
   const [list, setList] = React.useState([]);
   const [pageNum, setPageNum] = React.useState(1);
-  const history = useHistory();
   useEffect(() => {
     fetchList(listType, pageNum);
   }, [listType, pageNum]);

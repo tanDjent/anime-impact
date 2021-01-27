@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Page from "./Page";
 import { Link, useParams, useHistory } from "react-router-dom";
 export default function List() {
-  let { type } = useParams();
-  const [activeTab, setActiveTab] = useState(type);
+  var { type } = useParams();
+
+  const [activeTab, setActiveTab] = useState();
   const history = useHistory();
+  useEffect(() => {
+    setActiveTab(type);
+  }, [type]);
   const pushHistory = (s) => history.push("/anime-manga/" + s);
   return (
     <div className='container-fluid'>
@@ -23,7 +27,7 @@ export default function List() {
         </div>
         <div className='col-12'>
           <Tabs
-            defaultActiveKey={activeTab}
+            activeKey={activeTab}
             id='uncontrolled-tab-example'
             onSelect={(k) => {
               setActiveTab(k);

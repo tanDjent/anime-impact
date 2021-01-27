@@ -47,7 +47,7 @@ export default function AnimeManga() {
               {anime.authors[0].name}
             </p>
           )}
-          {anime.type === "TV" && (
+          {(anime.type === "TV" || anime.type === "Movie") && (
             <p style={{ marginBottom: "1rem" }}>
               {anime.premiered} | {anime.type} | {anime.studios[0].name}
             </p>

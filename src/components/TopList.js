@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TopList.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -10,7 +10,8 @@ export default function TopList({ slides, title, airingStatus }) {
     location.pathname.includes("TopManga") ||
     location.pathname.includes("TopOneshots") ||
     location.pathname.includes("TopLightNovel") ||
-    location.pathname.includes("TopDoujinshi")
+    location.pathname.includes("TopDoujinshi") ||
+    title.includes("Manga")
   )
     animeOrManga = "manga";
   else animeOrManga = "anime";
