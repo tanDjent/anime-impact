@@ -28,7 +28,7 @@ export default function List() {
         <div className='col-12'>
           <Tabs
             activeKey={activeTab}
-            id='uncontrolled-tab-example'
+            id='uncontrolled-tab'
             onSelect={(k) => {
               setActiveTab(k);
               pushHistory(k);

@@ -66,6 +66,7 @@ h6 {
 .search-bar input,
 .search-bar input:active,
 .search-bar input:focus {
+  color: white;
   width: 100%;
   margin-left: 1rem;
   font-size: 1.4rem;
@@ -279,6 +280,7 @@ h6 {
 }
 .nav-tabs {
   background: #1c1c1c;
+  margin-bottom: 2rem !important;
 }
 .nav-tabs .nav-link.active {
   background-color: #5d4298 !important;
@@ -292,4 +294,14 @@ a:hover {
 }
 .breadcrumb {
   background-color: white !important;
+}
+.download-button {
+  background-color: #5d4298;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+.download-button:hover {
+  background-color: #6d54a2;
 }

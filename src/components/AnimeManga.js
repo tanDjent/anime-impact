@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Anime, Manga } from "../shared";
 import { useParams, useLocation } from "react-router-dom";
+import { Alert } from "reactstrap";
 
 export default function AnimeManga() {
   const location = useLocation();
   const { id } = useParams();
   const [anime, setAnime] = useState(null);
+  const [visible, setVisible] = useState(true);
+  const onDismiss = () => setVisible(false);
   useEffect(() => {
     if (id) {
       const aOrM = location.pathname.includes("anime");
@@ -28,6 +31,12 @@ export default function AnimeManga() {
     <div className='container-fluid anime'>
       <div className='row '>
         <div className='col-12 col-sm-10 offset-sm-1'>
+          {(anime.type === "TV" || anime.type === "Movie") && (
+            <Alert color='danger' isOpen={visible} toggle={onDismiss}>
+              Torrent websites are banned in many countries. You may have to use
+              a VPN.
+            </Alert>
+          )}
           <h2>{anime.title}</h2>
         </div>
       </div>
@@ -48,9 +57,24 @@ export default function AnimeManga() {
             </p>
           )}
           {(anime.type === "TV" || anime.type === "Movie") && (
-            <p style={{ marginBottom: "1rem" }}>
-              {anime.premiered} | {anime.type} | {anime.studios[0].name}
-            </p>
+            <div>
+              <p style={{ marginBottom: "1rem" }}>
+                {anime.premiered} | {anime.type} | {anime.studios[0].name}
+              </p>
+              <button
+                className='download-button'
+                style={{ padding: "1rem" }}
+                onClick={() =>
+                  window.open(
+                    "https://nyaa.si/?f=0&c=1_2&q=" + anime.title.slice(0, 30),
+                    "_blank"
+                  )
+                }
+              >
+                {" "}
+                Download Torrent
+              </button>
+            </div>
           )}
         </div>
       </div>

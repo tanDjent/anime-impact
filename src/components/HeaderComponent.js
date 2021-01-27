@@ -45,7 +45,9 @@ class Header extends Component {
               <div className='menu d-flex '>
                 <NavItem>
                   <NavLink to='/home'>
-                    <Button className='home-button'>Home</Button>
+                    <Button className='home-button' onClick={this.toggleNav}>
+                      Home
+                    </Button>
                   </NavLink>
                 </NavItem>
 
@@ -54,37 +56,42 @@ class Header extends Component {
                     <Dropdown.Toggle>Anime</Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopAnime")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopAnime");
+                        }}
                       >
                         Top Anime
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/SeasonalAnime")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/SeasonalAnime");
+                        }}
                       >
                         Seasonal Anime
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopMovie")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopMovie");
+                        }}
                       >
                         Top Movie
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopAiring")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopAiring");
+                        }}
                       >
                         Top Airing
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopUpcoming")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopUpcoming");
+                        }}
                       >
                         Top Upcoming
                       </Dropdown.Item>
@@ -98,30 +105,34 @@ class Header extends Component {
 
                     <Dropdown.Menu>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopManga")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopManga");
+                        }}
                       >
                         Top Manga
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopOneShots")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopOneShots");
+                        }}
                       >
                         Top Oneshots
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopLightNovel")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopLightNovel");
+                        }}
                       >
                         Top Light Novel
                       </Dropdown.Item>
                       <Dropdown.Item
-                        onClick={() =>
-                          this.props.history.push("/anime-manga/TopDoujinshi")
-                        }
+                        onClick={() => {
+                          this.toggleNav();
+                          this.props.history.push("/anime-manga/TopDoujinshi");
+                        }}
                       >
                         Top Doujinshi
                       </Dropdown.Item>
@@ -140,13 +151,20 @@ class Header extends Component {
                     onChange={(event) =>
                       this.setState({ search: event.target.value })
                     }
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter") {
+                        this.toggleNav();
+                        this.props.history.push(`/search/${this.state.search}`);
+                      }
+                    }}
                   />
                   <div className='td' id='s-cover'>
                     <button
                       type='submit'
-                      onClick={() =>
-                        this.props.history.push(`/search/${this.state.search}`)
-                      }
+                      onClick={() => {
+                        this.toggleNav();
+                        this.props.history.push(`/search/${this.state.search}`);
+                      }}
                     >
                       <div id='s-circle'></div>
                       <span></span>
