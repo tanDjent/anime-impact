@@ -59,7 +59,7 @@ export default function AnimeManga() {
           {(anime.type === "TV" || anime.type === "Movie") && (
             <div>
               <p style={{ marginBottom: "1rem" }}>
-                {anime.premiered} | {anime.type} | {anime.studios[0].name}
+                {anime.premiered} | {anime.type} | {anime?.studios[0]?.name}
               </p>
               <button
                 className='download-button'
