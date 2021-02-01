@@ -44,7 +44,7 @@ export default function Page({ listType }) {
     }
   };
   return (
-    <div className='anime-page px-5'>
+    <div className='anime-page '>
       <TopList
         slides={list}
         title={listType}
