@@ -22,9 +22,9 @@ function Home({
           />
           {quote ? (
             <div className='quote'>
-              <h4>{quote[0].quote}</h4>
+              <h4>{quote.quote}</h4>
               <p>
-                -{quote[0].character} from {quote[0].anime}
+                -{quote.character} from {quote.anime}
               </p>
             </div>
           ) : (

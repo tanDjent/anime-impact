@@ -44,7 +44,7 @@ class Header extends Component {
             <Nav navbar>
               <div className='menu d-flex '>
                 <NavItem>
-                  <NavLink to='/home'>
+                  <NavLink to='/anime-impact'>
                     <Button className='home-button' onClick={this.toggleNav}>
                       Home
                     </Button>
@@ -128,7 +128,7 @@ class Header extends Component {
                         onClick={() => {
                           this.toggleNav();
                           this.props.history.push(
-                            "/anime-impact/anime-manga/TopOneShots"
+                            "/anime-impact/anime-manga/TopOneshots"
                           );
                         }}
                       >

@@ -36,6 +36,7 @@ class App extends Component {
     return axios
       .get(api)
       .then((result) => {
+        console.log("LOG ", result.data);
         this.setState({
           [key]: completeData ? result.data : result.data[payloadKey],
         });
@@ -54,14 +55,30 @@ class App extends Component {
           api: AiringToday + this.state.day,
           key: "airingToday",
           payloadKey: this.state.day,
+          completeData: false,
         },
         { api: SeasonalAnime, key: "seasonalAnime" },
-        { api: TopAiring, key: "topAiring", payloadKey: "top" },
-        { api: TopUpcoming, key: "topUpcoming", payloadKey: "top" },
-        { api: AllTimeTop + "1", key: "allTimeTop", payloadKey: "top" },
-        { api: Quote, key: "quote", payloadKey: "data" },
-      ].map(({ api, key, payloadKey = "anime" }) =>
-        this.fetchList(key, api, payloadKey)
+        {
+          api: TopAiring,
+          key: "topAiring",
+          payloadKey: "top",
+          completeData: false,
+        },
+        {
+          api: TopUpcoming,
+          key: "topUpcoming",
+          payloadKey: "top",
+          completeData: false,
+        },
+        {
+          api: AllTimeTop + "1",
+          key: "allTimeTop",
+          payloadKey: "top",
+          completeData: false,
+        },
+        { api: Quote, key: "quote", payloadKey: "data", completeData: true },
+      ].map(({ api, key, payloadKey = "anime", completeData = false }) =>
+        this.fetchList(key, api, payloadKey, completeData)
       )
     );
   }
@@ -73,7 +90,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route
-            path='/anime-impact/home'
+            path='/anime-impact/'
             component={() => (
               <Home
                 airingToday={this.state.airingToday}
@@ -101,7 +118,7 @@ class App extends Component {
             path='/anime-impact/search/:name'
             component={() => <SearchComponent />}
           />
-          <Redirect to='/anime-impact/home' />
+          <Redirect to='/anime-impact/' />
         </Switch>
         <Footer />
       </>

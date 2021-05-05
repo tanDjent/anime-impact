@@ -20,7 +20,7 @@ export default function List() {
           <Breadcrumb>
             <Breadcrumb.Item>
               {" "}
-              <Link to='/anime-impact/home'>Home</Link>
+              <Link to='/anime-impact/'>Home</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{activeTab}</Breadcrumb.Item>
           </Breadcrumb>
