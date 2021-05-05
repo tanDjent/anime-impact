@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/anime-impact/static/css/main.e61b5716.chunk.css",
-    "main.js": "/anime-impact/static/js/main.51706610.chunk.js",
-    "main.js.map": "/anime-impact/static/js/main.51706610.chunk.js.map",
+    "main.js": "/anime-impact/static/js/main.67ccb1f4.chunk.js",
+    "main.js.map": "/anime-impact/static/js/main.67ccb1f4.chunk.js.map",
     "runtime-main.js": "/anime-impact/static/js/runtime-main.d7842ad9.js",
     "runtime-main.js.map": "/anime-impact/static/js/runtime-main.d7842ad9.js.map",
     "static/css/2.ef643ca9.chunk.css": "/anime-impact/static/css/2.ef643ca9.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.ef643ca9.chunk.css",
     "static/js/2.94dbce66.chunk.js",
     "static/css/main.e61b5716.chunk.css",
-    "static/js/main.51706610.chunk.js"
+    "static/js/main.67ccb1f4.chunk.js"
   ]
 }
