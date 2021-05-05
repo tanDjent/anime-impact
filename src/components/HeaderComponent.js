@@ -44,7 +44,7 @@ class Header extends Component {
             <Nav navbar>
               <div className='menu d-flex '>
                 <NavItem>
-                  <NavLink to='/anime-impact'>
+                  <NavLink to='/home'>
                     <Button className='home-button' onClick={this.toggleNav}>
                       Home
                     </Button>
@@ -58,9 +58,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopAnime"
-                          );
+                          this.props.history.push("/anime-manga/TopAnime");
                         }}
                       >
                         Top Anime
@@ -68,9 +66,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/SeasonalAnime"
-                          );
+                          this.props.history.push("/anime-manga/SeasonalAnime");
                         }}
                       >
                         Seasonal Anime
@@ -78,9 +74,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopMovie"
-                          );
+                          this.props.history.push("/anime-manga/TopMovie");
                         }}
                       >
                         Top Movie
@@ -88,9 +82,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopAiring"
-                          );
+                          this.props.history.push("/anime-manga/TopAiring");
                         }}
                       >
                         Top Airing
@@ -98,9 +90,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopUpcoming"
-                          );
+                          this.props.history.push("/anime-manga/TopUpcoming");
                         }}
                       >
                         Top Upcoming
@@ -117,9 +107,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopManga"
-                          );
+                          this.props.history.push("/anime-manga/TopManga");
                         }}
                       >
                         Top Manga
@@ -127,9 +115,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopOneshots"
-                          );
+                          this.props.history.push("/anime-manga/TopOneshots");
                         }}
                       >
                         Top Oneshots
@@ -137,9 +123,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopLightNovel"
-                          );
+                          this.props.history.push("/anime-manga/TopLightNovel");
                         }}
                       >
                         Top Light Novel
@@ -147,9 +131,7 @@ class Header extends Component {
                       <Dropdown.Item
                         onClick={() => {
                           this.toggleNav();
-                          this.props.history.push(
-                            "/anime-impact/anime-manga/TopDoujinshi"
-                          );
+                          this.props.history.push("/anime-manga/TopDoujinshi");
                         }}
                       >
                         Top Doujinshi
@@ -172,9 +154,7 @@ class Header extends Component {
                     onKeyPress={(e) => {
                       if (e.key === "Enter") {
                         this.toggleNav();
-                        this.props.history.push(
-                          `/anime-impact/search/${this.state.search}`
-                        );
+                        this.props.history.push(`/search/${this.state.search}`);
                       }
                     }}
                   />
@@ -183,9 +163,7 @@ class Header extends Component {
                       type='submit'
                       onClick={() => {
                         this.toggleNav();
-                        this.props.history.push(
-                          `/anime-impact/search/${this.state.search}`
-                        );
+                        this.props.history.push(`/search/${this.state.search}`);
                       }}
                     >
                       <div id='s-circle'></div>

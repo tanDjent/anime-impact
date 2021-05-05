@@ -36,7 +36,6 @@ class App extends Component {
     return axios
       .get(api)
       .then((result) => {
-        console.log("LOG ", result.data);
         this.setState({
           [key]: completeData ? result.data : result.data[payloadKey],
         });
@@ -90,7 +89,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route
-            path='/anime-impact/'
+            path='/home'
             component={() => (
               <Home
                 airingToday={this.state.airingToday}
@@ -102,23 +101,11 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            path='/anime-impact/anime-manga/:type'
-            component={List}
-          ></Route>
-          <Route
-            path='/anime-impact/anime/:id'
-            component={() => <AnimeManga />}
-          />
-          <Route
-            path='/anime-impact/manga/:id'
-            component={() => <AnimeManga />}
-          />
-          <Route
-            path='/anime-impact/search/:name'
-            component={() => <SearchComponent />}
-          />
-          <Redirect to='/anime-impact/' />
+          <Route path='/anime-manga/:type' component={List}></Route>
+          <Route path='/anime/:id' component={() => <AnimeManga />} />
+          <Route path='/manga/:id' component={() => <AnimeManga />} />
+          <Route path='/search/:name' component={() => <SearchComponent />} />
+          <Redirect to='/home' />
         </Switch>
         <Footer />
       </>

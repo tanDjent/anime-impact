@@ -25,7 +25,7 @@ export default function TopList({ slides, title, airingStatus }) {
             index
           ) => (
             <Link
-              to={`/anime-impact/${animeOrManga}/${mal_id}`}
+              to={`/${animeOrManga}/${mal_id}`}
               style={{ textDecoration: "none" }}
               key={index}
             >

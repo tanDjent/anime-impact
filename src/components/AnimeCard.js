@@ -14,7 +14,7 @@ const AnimeCard = ({
   },
 }) => {
   return (
-    <Link to={`/anime-impact/anime/${mal_id}`}>
+    <Link to={`/anime/${mal_id}`}>
       {title === "Loading" ? (
         <div className='spinner-grow' role='status'>
           <span className='sr-only'>Loading...</span>
