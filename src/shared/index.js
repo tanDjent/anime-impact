@@ -4,7 +4,7 @@ export const TopAiring = "https://api.jikan.moe/v3/top/anime/1/airing";
 export const TopUpcoming = "https://api.jikan.moe/v3/top/anime/1/upcoming";
 export const AllTimeTop = "https://api.jikan.moe/v3/top/anime/";
 export const TopManga = "https://api.jikan.moe/v3/top/manga/";
-export const Quote = "https://animechanapi.xyz/api/quotes/random";
+export const Quote = "https://animechan.vercel.app/api/random";
 export const Anime = "https://api.jikan.moe/v3/anime/";
 export const Manga = "https://api.jikan.moe/v3/manga/";
 export const SearchManga = "https://api.jikan.moe/v3/search/manga?q=";

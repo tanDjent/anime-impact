@@ -21,7 +21,7 @@ export default function AllTimeList({ list }) {
               index
             ) => (
               <Link
-                to={`/anime/${mal_id}`}
+                to={`/anime-impact/anime/${mal_id}`}
                 style={{ textDecoration: "none" }}
                 key={index}
               >

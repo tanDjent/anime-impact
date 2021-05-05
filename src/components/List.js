@@ -12,7 +12,7 @@ export default function List() {
   useEffect(() => {
     setActiveTab(type);
   }, [type]);
-  const pushHistory = (s) => history.push("/anime-manga/" + s);
+  const pushHistory = (s) => history.push("/anime-impact/anime-manga/" + s);
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -20,7 +20,7 @@ export default function List() {
           <Breadcrumb>
             <Breadcrumb.Item>
               {" "}
-              <Link to='/home'>Home</Link>
+              <Link to='/anime-impact/home'>Home</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{activeTab}</Breadcrumb.Item>
           </Breadcrumb>

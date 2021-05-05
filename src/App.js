@@ -73,7 +73,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route
-            path='/home'
+            path='/anime-impact/home'
             component={() => (
               <Home
                 airingToday={this.state.airingToday}
@@ -85,11 +85,23 @@ class App extends Component {
               />
             )}
           />
-          <Route path='/anime-manga/:type' component={List}></Route>
-          <Route path='/anime/:id' component={() => <AnimeManga />} />
-          <Route path='/manga/:id' component={() => <AnimeManga />} />
-          <Route path='/search/:name' component={() => <SearchComponent />} />
-          <Redirect to='/home' />
+          <Route
+            path='/anime-impact/anime-manga/:type'
+            component={List}
+          ></Route>
+          <Route
+            path='/anime-impact/anime/:id'
+            component={() => <AnimeManga />}
+          />
+          <Route
+            path='/anime-impact/manga/:id'
+            component={() => <AnimeManga />}
+          />
+          <Route
+            path='/anime-impact/search/:name'
+            component={() => <SearchComponent />}
+          />
+          <Redirect to='/anime-impact/home' />
         </Switch>
         <Footer />
       </>
