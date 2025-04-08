@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/anime-impact/static/css/main.e61b5716.chunk.css",
-    "main.js": "/anime-impact/static/js/main.67ccb1f4.chunk.js",
-    "main.js.map": "/anime-impact/static/js/main.67ccb1f4.chunk.js.map",
+    "main.js": "/anime-impact/static/js/main.92b43514.chunk.js",
+    "main.js.map": "/anime-impact/static/js/main.92b43514.chunk.js.map",
     "runtime-main.js": "/anime-impact/static/js/runtime-main.d7842ad9.js",
     "runtime-main.js.map": "/anime-impact/static/js/runtime-main.d7842ad9.js.map",
-    "static/css/2.ef643ca9.chunk.css": "/anime-impact/static/css/2.ef643ca9.chunk.css",
-    "static/js/2.94dbce66.chunk.js": "/anime-impact/static/js/2.94dbce66.chunk.js",
-    "static/js/2.94dbce66.chunk.js.map": "/anime-impact/static/js/2.94dbce66.chunk.js.map",
+    "static/css/2.4b28996e.chunk.css": "/anime-impact/static/css/2.4b28996e.chunk.css",
+    "static/js/2.5158518f.chunk.js": "/anime-impact/static/js/2.5158518f.chunk.js",
+    "static/js/2.5158518f.chunk.js.map": "/anime-impact/static/js/2.5158518f.chunk.js.map",
     "static/js/3.da64e4a3.chunk.js": "/anime-impact/static/js/3.da64e4a3.chunk.js",
     "static/js/3.da64e4a3.chunk.js.map": "/anime-impact/static/js/3.da64e4a3.chunk.js.map",
     "index.html": "/anime-impact/index.html",
-    "static/css/2.ef643ca9.chunk.css.map": "/anime-impact/static/css/2.ef643ca9.chunk.css.map",
+    "static/css/2.4b28996e.chunk.css.map": "/anime-impact/static/css/2.4b28996e.chunk.css.map",
     "static/css/main.e61b5716.chunk.css.map": "/anime-impact/static/css/main.e61b5716.chunk.css.map",
-    "static/js/2.94dbce66.chunk.js.LICENSE.txt": "/anime-impact/static/js/2.94dbce66.chunk.js.LICENSE.txt",
+    "static/js/2.5158518f.chunk.js.LICENSE.txt": "/anime-impact/static/js/2.5158518f.chunk.js.LICENSE.txt",
     "static/media/all.css": "/anime-impact/static/media/fa-solid-900.46fdbd2d.woff",
     "static/media/fischl.7860e1a8.png": "/anime-impact/static/media/fischl.7860e1a8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d7842ad9.js",
-    "static/css/2.ef643ca9.chunk.css",
-    "static/js/2.94dbce66.chunk.js",
+    "static/css/2.4b28996e.chunk.css",
+    "static/js/2.5158518f.chunk.js",
     "static/css/main.e61b5716.chunk.css",
-    "static/js/main.67ccb1f4.chunk.js"
+    "static/js/main.92b43514.chunk.js"
   ]
 }
